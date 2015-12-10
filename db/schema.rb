@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151210120020) do
+ActiveRecord::Schema.define(version: 20151210134809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "types", force: :cascade do |t|
+    t.string   "pos"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -40,4 +46,31 @@ ActiveRecord::Schema.define(version: 20151210120020) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "vocab_worksheets", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "vocab_worksheets", ["user_id"], name: "index_vocab_worksheets_on_user_id", using: :btree
+
+  create_table "vocab_worksheets_words", id: false, force: :cascade do |t|
+    t.integer "vocab_worksheet_id"
+    t.integer "word_id"
+  end
+
+  create_table "words", force: :cascade do |t|
+    t.string   "headword"
+    t.text     "definition"
+    t.integer  "type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "words", ["type_id"], name: "index_words_on_type_id", using: :btree
+
+  add_foreign_key "vocab_worksheets", "users"
+  add_foreign_key "words", "types"
 end
