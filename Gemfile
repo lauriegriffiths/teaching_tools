@@ -13,6 +13,7 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'xray-rails'
 end
 gem 'administrate'
 gem 'bootstrap-sass'
