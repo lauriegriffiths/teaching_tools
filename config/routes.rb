@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     end
     root controller: DashboardManifest::ROOT_DASHBOARD, action: :index
   end
+
+  resources :vocab_worksheets
+
   root to: 'visitors#index'
   devise_for :users
 end
