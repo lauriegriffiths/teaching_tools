@@ -1,0 +1,16 @@
+table.table.table-striped
+  thead
+    tr
+      th present
+      th past
+      th past participle
+  tbody
+    - @verb_matching_game.triplets.each do |present,past,pp|
+      tr
+        td = present
+        td = past
+        td = pp
+
+= link_to "Download as a pdf file", verb_matching_game_path(@verb_matching_game,format: :pdf)
+
+

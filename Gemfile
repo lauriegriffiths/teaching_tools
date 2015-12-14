@@ -22,6 +22,7 @@ gem 'pg'
 gem 'simple_form'
 gem 'slim-rails'
 gem 'prawn'
+gem 'linguistics'
 group :development do
   gem 'better_errors'
   gem 'guard-bundler'
