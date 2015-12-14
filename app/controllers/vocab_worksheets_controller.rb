@@ -10,6 +10,7 @@ class VocabWorksheetsController < ApplicationController
       redirect_to @vocab_worksheet
     else
       render 'new'
+    end
   end
 
   def update
