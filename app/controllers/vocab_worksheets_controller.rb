@@ -16,6 +16,7 @@ class VocabWorksheetsController < ApplicationController
     @vocab_worksheet = VocabWorksheet.find(params[:id])
     @vocab_worksheet.update_attributes(vocab_worksheet_params)
     @vocab_worksheet.link_to_words
+    redirect_to @vocab_worksheet
   end
 
   def edit 

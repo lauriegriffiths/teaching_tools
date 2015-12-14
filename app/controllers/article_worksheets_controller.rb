@@ -25,6 +25,15 @@ class ArticleWorksheetsController < ApplicationController
     end
   end
 
+  def update
+    @article_worksheet = ArticleWorksheet.find(params[:id])
+    @article_worksheet.update_attributes(article_worksheet_params)
+    redirect_to @article_worksheet
+  end
+
+  def edit 
+    @article_worksheet = ArticleWorksheet.find(params[:id])
+  end
 
   private
   def article_worksheet_params
