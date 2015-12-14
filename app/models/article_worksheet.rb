@@ -4,13 +4,13 @@ class ArticleWorksheet < ActiveRecord::Base
 
   def body_with_no_articles
   articles = ['the','a','an']
-    articles_removed = body.split.map(& :downcase).map do |w|
-      if articles.include?(w)
-        "_____"
-      else
-        w
-      end
+  articles_removed = body.split.map do |w|
+    if articles.include?(w.downcase)
+      "_____"
+    else
+      w
     end
-    articles_removed.join(" ")
+  end
+  articles_removed.join(" ")
   end
 end
