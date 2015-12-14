@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 
   resources :vocab_worksheets
+  resources :article_worksheets
 
   root to: 'visitors#index'
   devise_for :users

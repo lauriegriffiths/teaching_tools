@@ -4,19 +4,21 @@ class VocabWorksheetsController < ApplicationController
   end
 
   def create
-    @vocab_worksheet = VocabWorksheet.create(vocab_worksheet_params)
+    @vocab_worksheet = VocabWorksheet.new(vocab_worksheet_params)
     @vocab_worksheet.link_to_words
-    render 'edit' 
+    if @vocab_worksheet.save
+      redirect_to @vocab_worksheet
+    else
+      render 'new'
   end
 
   def update
     @vocab_worksheet = VocabWorksheet.find(params[:id])
     @vocab_worksheet.update_attributes(vocab_worksheet_params)
     @vocab_worksheet.link_to_words
-    render 'edit'
   end
 
-  def show
+  def edit 
     @vocab_worksheet = VocabWorksheet.find(params[:id])
   end
 
