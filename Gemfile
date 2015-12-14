@@ -21,6 +21,7 @@ gem 'devise'
 gem 'pg'
 gem 'simple_form'
 gem 'slim-rails'
+gem 'prawn'
 group :development do
   gem 'better_errors'
   gem 'guard-bundler'
