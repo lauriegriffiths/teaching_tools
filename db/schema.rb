@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151214052649) do
+ActiveRecord::Schema.define(version: 20151215064318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,21 @@ ActiveRecord::Schema.define(version: 20151214052649) do
   end
 
   add_index "article_worksheets", ["user_id"], name: "index_article_worksheets_on_user_id", using: :btree
+
+  create_table "definition_matching_games", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.text     "vocab_list"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "definition_matching_games", ["user_id"], name: "index_definition_matching_games_on_user_id", using: :btree
+
+  create_table "definition_matching_games_words", id: false, force: :cascade do |t|
+    t.integer "definition_matching_game_id"
+    t.integer "word_id"
+  end
 
   create_table "types", force: :cascade do |t|
     t.string   "pos"
@@ -93,6 +108,7 @@ ActiveRecord::Schema.define(version: 20151214052649) do
   add_index "words", ["type_id"], name: "index_words_on_type_id", using: :btree
 
   add_foreign_key "article_worksheets", "users"
+  add_foreign_key "definition_matching_games", "users"
   add_foreign_key "verb_matching_games", "users"
   add_foreign_key "vocab_worksheets", "users"
   add_foreign_key "words", "types"

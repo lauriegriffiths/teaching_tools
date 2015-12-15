@@ -1,0 +1,14 @@
+table.table.table-striped
+  thead
+    tr
+      th word
+      th definition
+  tbody
+    - @definition_matching_game.words.each do |w|
+      tr
+        td = w.headword
+        td = w.definition
+= link_to "Download as a pdf file", definition_matching_game_path(@definition_matching_game,format: :pdf)
+
+
+

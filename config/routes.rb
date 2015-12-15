@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :vocab_worksheets
   resources :article_worksheets
   resources :verb_matching_games
+  resources :definition_matching_games
 
   root to: 'visitors#index'
   devise_for :users
