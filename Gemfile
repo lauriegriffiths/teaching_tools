@@ -9,6 +9,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 group :development, :test do
   gem 'byebug'
+  gem 'to_factory'
 end
 group :development do
   gem 'web-console', '~> 2.0'
