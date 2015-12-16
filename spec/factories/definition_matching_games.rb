@@ -1,8 +1,7 @@
 FactoryGirl.define do
   factory :definition_matching_game do
     user nil
-title "MyString"
-vocab_list "MyText"
+    title "Lesson 1"
+    vocab_list "dog cat wolf"
   end
-
 end
