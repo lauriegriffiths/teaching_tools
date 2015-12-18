@@ -62,9 +62,9 @@ f.close()
 
 
 ActiveRecord::Base.transaction do
-  File.open("db/frequency.txt") do |f|
+  File.open("db/frequency5000.txt") do |f|
     f.each_line do |l|
-      word, frequency = l.split
+      word, pos, frequency = l.split 
       Word.where(headword:word).find_each do |w|
         w.frequency = frequency
         w.save
@@ -72,4 +72,18 @@ ActiveRecord::Base.transaction do
     end
   end
 end
+
+
+
+#ActiveRecord::Base.transaction do
+#  File.open("db/frequency.txt") do |f|
+#    f.each_line do |l|
+#      word, frequency = l.split
+#      Word.where(headword:word).find_each do |w|
+#        w.frequency = frequency
+#        w.save
+#      end
+#    end
+#  end
+#end
 

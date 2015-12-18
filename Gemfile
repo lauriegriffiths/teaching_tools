@@ -24,6 +24,7 @@ gem 'simple_form'
 gem 'slim-rails'
 gem 'prawn'
 gem 'linguistics'
+gem 'lemmatizer'
 group :development do
   gem 'better_errors'
   gem 'guard-bundler'

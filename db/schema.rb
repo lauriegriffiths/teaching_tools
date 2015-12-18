@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151215064318) do
+ActiveRecord::Schema.define(version: 20151217153002) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(version: 20151215064318) do
     t.integer "definition_matching_game_id"
     t.integer "word_id"
   end
+
+  create_table "preposition_worksheets", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "preposition_worksheets", ["user_id"], name: "index_preposition_worksheets_on_user_id", using: :btree
 
   create_table "types", force: :cascade do |t|
     t.string   "pos"
@@ -109,6 +119,7 @@ ActiveRecord::Schema.define(version: 20151215064318) do
 
   add_foreign_key "article_worksheets", "users"
   add_foreign_key "definition_matching_games", "users"
+  add_foreign_key "preposition_worksheets", "users"
   add_foreign_key "verb_matching_games", "users"
   add_foreign_key "vocab_worksheets", "users"
   add_foreign_key "words", "types"

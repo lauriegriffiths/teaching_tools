@@ -1,0 +1,7 @@
+h1 =@preposition_worksheet.title
+= link_to "edit", edit_preposition_worksheet_path(@preposition_worksheet)
+
+p = @preposition_worksheet.body_with_multiple_choice.html_safe
+
+= link_to "Download as a pdf file", preposition_worksheet_path(@preposition_worksheet,format: :pdf)
+
