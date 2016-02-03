@@ -23,6 +23,7 @@ gem 'pg'
 gem 'simple_form'
 gem 'slim-rails'
 gem 'prawn'
+gem 'prawn-table'
 gem 'linguistics'
 gem 'lemmatizer'
 group :development do
