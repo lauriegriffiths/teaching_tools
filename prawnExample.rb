@@ -35,6 +35,8 @@ Prawn::Document.generate("hello.pdf") do
         :cell_style => {padding: 20, size:14, align: :center})
 
 
+  #foo.each_slice(3).to_a
+  #=> [["1", "2", "3"], ["4", "5", "6"], ["7", "8", "9"], ["10"]]
  
 
   
