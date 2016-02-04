@@ -5,6 +5,8 @@ class VerbMatchingGamesController < ApplicationController
   
   def create
     @verb_matching_game = VerbMatchingGame.new(verb_matching_game_params)
+   
+    @verb_matching_game.user = current_user if user_signed_in?
     if @verb_matching_game.save
       redirect_to @verb_matching_game
     else

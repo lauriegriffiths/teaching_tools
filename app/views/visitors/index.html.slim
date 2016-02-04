@@ -1,0 +1,11 @@
+.container-fluid
+  .row
+    .col-lg-12
+      h1 English Teaching Tools
+      p This is a collection of tools to make your ESL lesson preparation quicker and easier.
+  -if user_signed_in? 
+    h2 Recently Created:
+    ul
+      -current_user.verb_matching_games.each do |sheet|
+        li= link_to sheet.created_at.strftime('%Y %b %d %a') + " : " + sheet.title.to_s, sheet
+      
