@@ -1,15 +1,7 @@
 class VerbMatchingGamePdf < Prawn::Document
   def initialize(game)
     super()
-    define_grid(:columns => 3, :rows => game.triplets.length, :gutter => 0)
-
-    game.triplets.each_with_index do |triplet,i|
-      triplet.each_with_index do |word,j|
-        grid(i,j).bounding_box do
-          stroke_bounds
-          text word, size: 20, align: :center, valign: :center
-        end
-      end
-    end
+    table(game.triplets,width:540,
+    :cell_style => {padding: 30, size:20, align: :center})
   end
 end
