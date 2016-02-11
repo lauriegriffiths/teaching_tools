@@ -1,11 +1,26 @@
-.container-fluid
-  .row
-    .col-lg-12
-      h1 English Teaching Tools
-      p This is a collection of tools to make your ESL lesson preparation quicker and easier.
-  -if user_signed_in? 
-    h2 Recently Created:
-    ul
-      -current_user.verb_matching_games.each do |sheet|
-        li= link_to sheet.created_at.strftime('%Y %b %d %a') + " : " + sheet.title.to_s, sheet
-      
+.jumbotron
+  h1 Make worksheets, fast!
+  p Save time and energy by letting software take the pain out of making worksheets.  Go from idea to printable pdf in 60 seconds.
+  p
+    = link_to "Get started now","/", {class: "btn btn-primary btn-lg"}
+.col-md-4
+  h2 Word Cards
+  p Turn a list of words into a class room word card activity.
+  p
+    = link_to "Try it now",new_vocab_worksheet_path, {class: "btn btn-default"}
+.col-md-4
+  h2 Gap Fill Worksheets
+  p Take an article and make a gap filling activity.  No bottle of white-out required!
+  p
+    = link_to "Try it now",new_article_worksheet_path, {class: "btn btn-default"}
+.col-md-4
+  h2 Use a phone, tablet or computer
+  p Make your print-outs anytime and anyplace.
+  p
+    = link_to "How to print from your phone or tablet","#", {class: "btn btn-default"}
+-if user_signed_in? 
+  h2 Recently Created:
+  ul
+    -current_user.verb_matching_games.each do |sheet|
+      li= link_to sheet.created_at.strftime('%Y %b %d %a') + " : " + sheet.title.to_s, sheet
+  
