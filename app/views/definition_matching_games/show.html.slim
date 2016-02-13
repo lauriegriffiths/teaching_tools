@@ -7,7 +7,7 @@ table.table.table-striped
     - @definition_matching_game.words.each do |w|
       tr
         td = w.headword
-        td = w.definition
+        td = w.clean_definition
 = link_to "Download as a pdf file", definition_matching_game_path(@definition_matching_game,format: :pdf)
 
 

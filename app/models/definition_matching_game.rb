@@ -7,4 +7,10 @@ class DefinitionMatchingGame < ActiveRecord::Base
     words_in_body = Word.where(headword: vocab_list.split.uniq)
     self.words = words_in_body
   end
+
+  def word_definition_pairs
+    self.words.map do |w|
+      [w.headword,w.no_headword_definition]
+    end
+  end
 end
