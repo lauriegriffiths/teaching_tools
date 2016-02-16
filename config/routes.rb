@@ -10,8 +10,10 @@ Rails.application.routes.draw do
   resources :article_worksheets
   resources :verb_matching_games
   resources :definition_matching_games
+
   resources :preposition_worksheets
 
+  post 'words/find_words', to: 'words#find_words'
 
   root to: 'visitors#index'
   devise_for :users

@@ -5,7 +5,7 @@ class DefinitionMatchingGamesController < ApplicationController
   
   def create
     @definition_matching_game = DefinitionMatchingGame.new(definition_matching_game_params)
-    @definition_matching_game.link_to_words
+    #@definition_matching_game.link_to_words
     if @definition_matching_game.save
       redirect_to @definition_matching_game
     else
@@ -37,9 +37,11 @@ class DefinitionMatchingGamesController < ApplicationController
     @definition_matching_game = DefinitionMatchingGame.find(params[:id])
   end
 
+
+
   private
   def definition_matching_game_params
-    params.require(:definition_matching_game).permit(:title,:vocab_list)
+    params.require(:definition_matching_game).permit(:title,:vocab_list,word_ids:[])
   end
 
   

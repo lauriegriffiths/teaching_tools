@@ -2,3 +2,17 @@ h2 Create Vocab Matching Game
 
 = render "form"
 
+
+
+javascript:
+  function getCandidateWords() {
+  var body = $('#definition_matching_game_vocab_list').val()
+   $.ajax({
+     url: "#{words_find_words_path}",
+     type: "POST",
+     data: {body: body},
+     success: function(resp){}
+   })
+ };
+
+button.btn onClick="getCandidateWords()" Find words
