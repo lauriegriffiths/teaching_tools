@@ -1,0 +1,15 @@
+- @number_chase.number_pairs.each do |player|
+  table.table.table-striped
+    thead
+      tr
+        th hear
+        th say
+    tbody
+      - player.each do |pair|
+        tr
+          td = number_with_delimiter(pair[0])
+          td = number_with_delimiter(pair[1])
+= link_to "Download as a pdf file", number_chase_path(@number_chase,format: :pdf)
+
+
+

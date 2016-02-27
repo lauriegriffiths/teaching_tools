@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :article_worksheets
   resources :verb_matching_games
   resources :definition_matching_games
+  resources :number_chases
 
   resources :preposition_worksheets
 

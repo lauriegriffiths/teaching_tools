@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151217153002) do
+ActiveRecord::Schema.define(version: 20160226052532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,15 @@ ActiveRecord::Schema.define(version: 20151217153002) do
   create_table "definition_matching_games_words", id: false, force: :cascade do |t|
     t.integer "definition_matching_game_id"
     t.integer "word_id"
+  end
+
+  create_table "number_chases", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "maximum"
+    t.integer  "player_count"
+    t.integer  "turns_per_player"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "preposition_worksheets", force: :cascade do |t|

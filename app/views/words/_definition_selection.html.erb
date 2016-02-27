@@ -1,0 +1,32 @@
+<table class="definition-selection-table table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>part of speech</th>
+      <th>word</th>
+      <th>definition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% words.each do |w| %>
+      <tr> 
+        <label for="definition_matching_game_word_ids_<%=w.id%>">
+          <td><input class="check_boxes optional" type="checkbox" value="<%=w.id%>" name="definition_matching_game[word_ids][]" id="definition_matching_game_word_ids_<%=w.id%>"></td>
+          <td><%=w.type.pos%></td>
+          <td><%=w.headword%></td>
+          <td><%=w.clean_definition%></td>
+        </label>
+      </tr>
+    <%end%>
+  </tbody>
+</table>
+
+<script>
+  $(document).ready(function() {
+    $('.definition-selection-table tr').click(function(event) {
+      if (event.target.type !== 'checkbox') {
+        $(':checkbox', this).trigger('click');
+      }
+    });
+  });
+</script>

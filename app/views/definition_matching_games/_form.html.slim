@@ -4,4 +4,9 @@
   = f.input :title
   = f.input :vocab_list
   .candidates
-  = f.button :submit
+  = f.button :submit, class:"submit", id: "save-button"
+
+button.submit onClick="getCandidateWords()" Find words
+
+javascript:
+  $('#save-button').hide()

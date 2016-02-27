@@ -10,6 +10,12 @@ Prawn::Document.generate("hello.pdf") do
           size: 14
   end
 
+  table([ ["<b>hear</b>", "<b>say</b>"],
+        ["short", "short"],
+        ["loooooo", "short"] ],width:540,
+        :cell_style => {padding: 20, size:20, align: :center, inline_format: true})
+
+
   table([ ["short", "short", "loooooo"],
         ["short", "looooooo", "short"],
         ["loooooo", "short", "short"] ],width:540,

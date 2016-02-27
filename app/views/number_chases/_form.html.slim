@@ -1,0 +1,11 @@
+= simple_form_for @number_chase do |f|
+  = f.error_notification
+
+  = f.input :title
+  = f.input :maximum
+  = f.input :player_count
+  = f.input :turns_per_player
+
+  = f.button :submit, class:"submit", id: "save-button"
+
+
