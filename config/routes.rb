@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   resources :preposition_worksheets
 
+  get  'worksheets_menu', to:'static_pages#worksheets_menu'
+
   post 'words/find_words', to: 'words#find_words'
 
   root to: 'visitors#index'
