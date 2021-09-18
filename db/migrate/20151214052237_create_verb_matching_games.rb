@@ -1,4 +1,4 @@
-class CreateVerbMatchingGames < ActiveRecord::Migration
+class CreateVerbMatchingGames < ActiveRecord::Migration[4.2]
   def change
     create_table :verb_matching_games do |t|
       t.text :verbs

@@ -1,4 +1,4 @@
-class CreateArticleWorksheets < ActiveRecord::Migration
+class CreateArticleWorksheets < ActiveRecord::Migration[4.2]
   def change
     create_table :article_worksheets do |t|
       t.string :title

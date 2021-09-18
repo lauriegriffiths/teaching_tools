@@ -1,4 +1,4 @@
-class CreateNumberChases < ActiveRecord::Migration
+class CreateNumberChases < ActiveRecord::Migration[4.2]
   def change
     create_table :number_chases do |t|
       t.string :title

@@ -1,4 +1,4 @@
-class CreatePrepositionWorksheets < ActiveRecord::Migration
+class CreatePrepositionWorksheets < ActiveRecord::Migration[4.2]
   def change
     create_table :preposition_worksheets do |t|
       t.string :title
