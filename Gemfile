@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.7.4'
-gem 'rails', '5.2.6'
+gem 'rails', '6.1.4'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
